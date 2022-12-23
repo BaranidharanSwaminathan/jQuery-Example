@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="Stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+</head>
+<body>
+    <!-- click event -->
+    <section>
+        <h1>Click</h1>
+            <p>If you click on me, I will disappear.</p>
+            <p>Click me away!</p>
+            <p>Click me too!</p>
+
+            <script>
+                $(document).ready(function(){
+                  $("p").click(function(){
+                    $(this).hide();
+                  });
+                });
+            </script>
+    </section><br><br><br>
+
+    <!-- double click -->
+    <section>
+        <h1>double-click</h1>
+        <script>
+            $(document).ready(function(){
+              $("p").dblclick(function(){
+                $(this).hide();
+              });
+            });
+            </script>
+            
+            <p>If you double-click on me, I will disappear.</p>
+            <p>Click me away!</p>
+            <p>Click me too!</p>
+            
+    </section><br><br><br>
+    
+    <!-- Mouse-enter -->
+    <section>
+        <h1>Mouse-enter</h1>
+        <script>
+            $(document).ready(function(){
+              $("#p1").mouseenter(function(){
+                alert("You entered p1!");
+              });
+            });
+            </script>
+            
+            <p id="p1">Enter this paragraph.</p>
+    </section><br><br><br>
+
+    <!-- Mouse-leave -->
+    <section>
+        <h1>Mouse-leave</h1>
+        <script>
+            $(document).ready(function(){
+              $("#p2").mouseleave(function(){
+                alert("Bye! You now leave p1!");
+              });
+            });
+            </script>
+    
+            <p id="p2">This is a paragraph.</p>
+            
+    </section><br><br><br>
+
+    <!-- Hide() and show() -->
+    <section>
+        <h1>Hide() and show()</h1>
+        <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+              $("#p3").hide(1000);
+            });
+            $("#show").click(function(){
+              $("#p3").show(1000);
+            });
+          });
+          </script>
+          <p id="p3">If you click on the "Hide" button, I will disappear.</p>
+          
+          <button id="hide">Hide</button>
+          <button id="show">Show</button>
+          
+    </section><br><br><br>
+
+    <!-- Toggle() -->
+    <section>
+      <h1>Toggle()</h1>
+      <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $(".p4").toggle(500);
+          });
+        });
+        </script>
+        
+        <button>Toggle between hiding and showing the paragraphs</button>
+        
+        <p class="p4">This is a paragraph with little content.</p>
+        <p class="p4">This is another small paragraph.</p>
+    </section><br><br><br>
+
+    <!-- Fade-in() -->
+    <section>
+      <h1>Fade-in()</h1>
+      <script>
+        $(document).ready(function(){
+          $("button.fadein-btn").click(function(){
+            $("#div1").fadeIn();
+            $("#div2").fadeIn("slow");
+            $("#div3").fadeIn(3000);
+          });
+        });
+        </script>
+        
+        <p>Demonstrate fadeIn() with different parameters.</p>
+        
+        <button class="fadein-btn">Click to fade in boxes</button><br><br>
+        
+        <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+        <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+        <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+    </section>
+
+    <!-- Fade-out() -->
+    <section>
+      <h1>
+        Fade-out()
+      </h1>
+      <script>
+        $(document).ready(function(){
+          $("button.fadeout-btn").click(function(){
+            $("#div4").fadeOut();
+            $("#div5").fadeOut("slow");
+            $("#div6").fadeOut(3000);
+          });
+        });
+        </script>
+    
+        
+        <p>Demonstrate fadeOut() with different parameters.</p>
+        
+        <button class="fadeout-btn">Click to fade out boxes</button><br><br>
+        
+        <div id="div4" style="width:80px;height:80px;background-color:red;"></div><br>
+        <div id="div5" style="width:80px;height:80px;background-color:green;"></div><br>
+        <div id="div6" style="width:80px;height:80px;background-color:blue;"></div>
+    </section><br><br><br>
+
+    <!-- FadeToggle -->
+    <section>
+      <h1>FadeToggle</h1>
+
+      <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $("#div7").fadeToggle();
+            $("#div8").fadeToggle("slow");
+            $("#div9").fadeToggle(3000);
+          });
+        });
+        </script>
+        
+        <p>Demonstrate fadeToggle() with different speed parameters.</p>
+        
+        <button>Click to fade in/out boxes</button><br><br>
+        
+        <div id="div7" style="width:80px;height:80px;background-color:red;"></div>
+        <br>
+        <div id="div8" style="width:80px;height:80px;background-color:green;"></div>
+        <br>
+        <div id="div9" style="width:80px;height:80px;background-color:blue;"></div>
+    </section><br><br><br>
+
+    <!-- FadeTo() -->
+    <section>
+      <h1>FadeTo()</h1>
+
+      <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $("#div1").fadeTo("slow", 0.15);
+            $("#div2").fadeTo("slow", 0.4);
+            $("#div3").fadeTo("slow", 0.7);
+          });
+        });
+        </script>
+        <p>Demonstrate fadeTo() with different parameters.</p>
+        
+        <button>Click to fade boxes</button><br><br>
+        
+        <div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
+        <div id="div2" style="width:80px;height:80px;background-color:green;"></div><br>
+        <div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
+    </section><br><br><br>
+
+    <!-- SlideDown() -->
+    <section>
+      <h1>SlideDown()
+      </h1>
+
+      <script> 
+        $(document).ready(function(){
+          $("#flip").click(function(){
+            $("#panel").slideDown("slow");
+          });
+        });
+        </script>
+        
+         
+        <div id="flip">Click to slide down panel</div>
+        <div id="panel">Hello world!</div>
+    </section>
+
+    <!-- SlideUp() -->
+    <section>
+      <h1>SlideUp()
+      </h1>
+
+      <script> 
+        $(document).ready(function(){
+          $("#flip1").click(function(){
+            $("#panel1").slideUp("slow");
+          });
+        });
+        </script>
+        
+         
+        <div id="flip1">Click to slide down panel</div>
+        <div id="panel1">Hello world!</div>
+    </section>
+
+    <!-- SlideToggle -->
+    <section>
+      <H1>SlideToggle</H1>
+
+      <script> 
+        $(document).ready(function(){
+          $("#flip2").click(function(){
+            $("#panel2").slideToggle("slow");
+          });
+        });
+        </script>
+    
+        <div id="flip2">Click to slide the panel down or up</div>
+        <div id="panel2">Hello world!</div>
+    </section><br><br><br>
+
+    <!-- Stop() -->
+    <section>
+      <h1>Stop()</h1>
+
+      <script> 
+        $(document).ready(function(){
+          $("#flip3").click(function(){
+            $("#panel3").slideDown(5000);
+          });
+          $("#stop").click(function(){
+            $("#panel3").stop();
+          });
+        });
+        </script>
+        <button id="stop">Stop sliding</button>
+        
+        <div id="flip3">Click to slide down panel</div>
+        <div id="panel3">Hello world!</div>
+    </section><br><br><br><br>
+
+    <!-- JQuery Get -->
+    <section>
+      <h1>JQuery Get</h1>
+      <script>
+        $(document).ready(function(){
+          $("#btn1").click(function(){
+            alert("Text: " + $("#test").text());
+          });
+          $("#btn2").click(function(){
+            alert("HTML: " + $("#test").html());
+          });
+
+          $("#btnvalue").click(function(){
+            alert("Value: " + $("#testvalue").val());
+          });
+
+          $("#href").click(function(){
+          alert($("#w3s").attr("href"));
+          });
+        });
+      </script>
+        <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+        <button id="btn1">Show Text</button>
+        <button id="btn2">Show HTML</button><br>
+
+        <p>Name: <input type="text" id="testvalue" value="Barani"></p>
+        <button id="btnvalue">Show Value</button><br>
+
+        <p><a href="https://www.w3schools.com" id="w3s">W3Schools.com</a></p>
+        <button id="href">Show href Value</button>
+    </section><br><br><br><br>
+
+    <!-- JQuery Set -->
+    <section>
+      <h1>JQuery Set</h1>
+
+      <script> 
+          $(document).ready(function(){
+            $("#btntext").click(function(){
+              $("#test1").text("Hello world!");
+            });
+            $("#btnhtml").click(function(){
+              $("#test2").html("<b>Hello world!</b>");
+            });
+            $("#btnval").click(function(){
+              $("#test3").val("Barani dharan");
+            });
+          });
+      </script>
+          <p id="test1">This is a paragraph.</p><br>
+          <p id="test2">This is another paragraph.</p><br>
+
+          <p>Input field: <input type="text" id="test3" value="Barani"></p><br>
+
+          <button id="btntext">Set Text</button>
+          <button id="btnhtml">Set HTML</button>
+          <button id="btnval">Set Value</button>
+    </section><br><br><br><br>
+
+    <!-- Callback Function for text(), html(), and val() -->
+    <script> 
+     $(document).ready(function(){
+          $("#btntxtreturn").click(function(){
+            $("#test4").text(function(i, origText){
+              return "Old text: " + origText + " New text: Hello world! (index: " + i + ")"; 
+            });
+          });
+
+          $("#btnhtmlreturn").click(function(){
+            $("#test5").html(function(i, origText){
+              return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")"; 
+            });
+          });
+        });
+        </script>
+        <p id="test4">This is a <b>bold</b> paragraph.</p><br>
+        <p id="test5">This is another <b>bold</b> paragraph.</p><br>
+
+        <button id="btntxtreturn">Show Old/New Text</button>
+        <button id="btnhtmlreturn">Show Old/New HTML</button><br>
+  
+
+    <!-- Set Attributes - attr() -->
+    <script> 
+        $(document).ready(function(){
+          $("#btn4").click(function(){
+          $("#w3s1").attr("href", "https://www.w3schools.com/jquery/");
+          });
+        });
+    </script>
+
+
+        <p><a href="https://www.w3schools.com" id="w3s1">W3Schools.com</a></p>
+
+        <button id="btn4">Change href Value</button>
+
+        <p>Mouse over the link (or click on it) to see that the value of the href attribute has changed.</p>
+
+
+    <!-- jQuery append() Method -->
+    <section>
+      <h1>ADD</h1>
+      <script> 
+        $(document).ready(function(){
+          $("#bt1").click(function(){
+            $(".p1").append(" <b>Appended text</b>.");
+          });
+
+          $("#bt2").click(function(){
+            $("ol").append("<li>Appended item</li>");
+          });
+        });
+        </script>
+        </head>
+        <body>
+
+        <p class="p1">This is a paragraph.</p>
+        <p class="p1">This is another paragraph.</p>
+
+        <ol>
+          <li>List item 1</li>
+          <li>List item 2</li>
+          <li>List item 3</li>
+        </ol>
+
+        <button id="bt1">Append text</button>
+        <button id="bt2">Append list items</button>
+  </section><br><br><br><br>
+
+  <script> 
+    function appendText() {
+      var txt1 = "<p>Text.</p>";        // Create text with HTML
+      var txt2 = $("<p></p>").text("Text.");  // Create text with jQuery
+      var txt3 = document.createElement("p");
+      txt3.innerHTML = "Text.";         // Create text with DOM
+      $("body").append(txt1, txt2, txt3);   // Append new elements
+    }
+    </script>
+    <p>This is a paragraph.</p><br>
+    <button onclick="appendText()">Append text</button><br><br><br>
+
+    <!-- jQuery after() and before() Methods -->
+    <script>
+      $(document).ready(function(){
+        $("#bt3").click(function(){
+          $(".para").before("<b>Hi</b>");
+        });
+      
+        $("#bt4").click(function(){
+          $(".para").after("<i>Welcome</i>");
+        });
+      });
+    </script>
+    
+    <p class="para">Hello</p><br><br>
+    
+    <button id="bt3">Insert before</button>
+    <button id="bt4">Insert after</button><br><br><br>
+
+
+    <script>
+    function afterText() {
+      var txt4 = "<b>I </b>";           // Create element with HTML
+      var txt5 = $("<i></i>").text("love ");  // Create with jQuery
+      var txt6 = document.createElement("b");   // Create with DOM
+      txt6.innerHTML = "jQuery!";
+      $("#paraafter").after(txt4, txt5, txt6);    // Insert new elements after img
+    }
+    </script>
+    
+    <p id="paraafter">Hi All</p><br>
+    
+    <p>Click the button to insert text after the image.</p><br>
+    
+    <button onclick="afterText()">Insert after</button>
+
+    <!-- jQuery remove() Method -->
+    <section>
+      <h1>Remove</h1>
+
+      <script>
+        $(document).ready(function(){
+          $(".removclass").click(function(){
+            $("#div1").remove();
+          });
+        });
+        </script>
+        <div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+        
+        This is some text in the div.
+        <p>This is a paragraph in the div.</p>
+        <p>This is another paragraph in the div.</p>
+        
+        </div>
+        <br>
+        
+        <button class="removclass">Remove div element</button><br><br><br>
+    </section>
+
+
+            <script>
+              $(document).ready(function(){
+                $(".emptyclass").click(function(){
+                  $("#div1").empty();
+                });
+              });
+              </script>
+              <div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+              
+              This is some text in the div.
+              <p>This is a paragraph in the div.</p>
+              <p>This is another paragraph in the div.</p>
+              
+              </div>
+              <br>
+              
+              <button class="emptyclass">Remove div element</button><br><br><br>
+
+              <h1>addClass</h1>
+              <script>
+                $(document).ready(function(){
+                  $(".addclassbtn").click(function(){
+                    $("#h1, #h2, #p").addClass("blue");
+                    $(".div").addClass("important");
+                  });
+                });
+                </script>
+                <style>
+                .important {
+                  font-weight: bold;
+                  font-size: xx-large;
+                }
+                
+                .blue {
+                  color: blue;
+                }
+                </style>
+              
+                <h1 id="h1">Heading 1</h1>
+                <h2 id="h2">Heading 2</h2>
+                
+                <p class="p">This is a paragraph.</p>
+                <p class="p">This is another paragraph.</p>
+                
+                <div class="div">This is some important text!</div><br>
+                
+                <button class="addclassbtn">Add classes to elements</button><br><br><br>
+
+
+                <h1>CSS()</h1>
+                <script>
+                  $(document).ready(function(){
+                    $(".cssbtn").click(function(){
+                      $(".cssp").css("background-color", "yellow");
+                    });
+                  });
+                  </script>
+                 
+                  
+                  <h2>This is a heading</h2>
+                  
+                  <p class="cssp" style="background-color:#ff0000">This is a paragraph.</p><br>
+                  <p  class="cssp"style="background-color:#00ff00">This is a paragraph.</p><br>
+                  <p  class="cssp"style="background-color:#0000ff">This is a paragraph.</p><br>
+                  
+                  <p>This is a paragraph.</p><br>
+                  
+                  <button class="cssbtn">Set background-color of p</button><br><br>
+
+                  <script>
+                    $(document).ready(function(){
+                      $(".cssbtn1").click(function(){
+                        $(".cssp1").css({"background-color": "yellow", "font-size": "200%"});
+                      });
+                    });
+                    </script>
+                    </head>
+                    <body>
+                    
+                    <h2>This is a heading</h2><br>
+                    
+                    <p class="cssp1" style="background-color:#ff0000">This is a paragraph.</p><br>
+                    <p  class="cssp1"style="background-color:#00ff00">This is a paragraph.</p><br>
+                    <p class="cssp1" style="background-color:#0000ff">This is a paragraph.</p><br>
+                    
+                    <p>This is a paragraph.</p><br>
+                    
+                    <button  class="cssbtn1">Set multiple styles for p</button><br><br><br><br>
+
+                    <h1>Dimensions</h1>
+                    <script>
+                      $(document).ready(function(){
+                        $(".dimbtn").click(function(){
+                          var txtdim = "";
+                          txtdim += "Width of div: " + $("#dimdiv").width() + "</br>";
+                          txtdim += "Height of div: " + $("#dimdiv").height();
+                          $("#dimdiv").html(txtdim);
+                        });
+                      });
+                      </script>
+                      <style>
+                      #dimdiv {
+                        height: 100px;
+                        width: 300px;
+                        padding: 10px;
+                        margin: 3px;
+                        border: 1px solid blue;
+                        background-color: lightblue;
+                      }
+                      </style>
+             
+                      
+                      <div id="dimdiv"></div>
+                      <br>
+                      
+                      <button class="dimbtn">Display dimensions of div</button><br>
+                      
+                      <p>width() - returns the width of an element.</p><br>
+                      <p>height() - returns the height of an element.</p><br><br><br>
+
+
+
+                      <script>
+                        $(document).ready(function(){
+                          $(".docwidth").click(function(){
+                            var txt = "";
+                            txt += "Document width/height: " + $(document).width();
+                            txt += "x" + $(document).height() + "\n";
+                            txt += "Window width/height: " + $(window).width();
+                            txt += "x" + $(window).height();
+                            alert(txt);
+                          });
+                        });
+                        </script>
+                      
+                        
+                        <button class="docwidth">Display dimensions of document and window</button>
+</body>
+</html>
